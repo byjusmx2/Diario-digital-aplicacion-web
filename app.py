@@ -5,11 +5,11 @@ from model_prediction import *
 import os
 
 port = int(os.environ.get("PORT", 5000))
-print(port)
+
 # Flask Object
 app = Flask(__name__)
-app.run(debug=True)
-app.secret_key = 'SecretKey'
+
+#app.secret_key = 'SecretKey'
 
 # Date Today
 date_time = date.today().strftime("%A %d %B %Y")
