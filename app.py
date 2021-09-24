@@ -2,7 +2,10 @@ from flask import Flask, render_template, request, redirect, jsonify, json, flas
 from datetime import datetime
 from datetime import date
 from model_prediction import *
+import os
 
+port = int(os.environ.get("PORT", 5000))
+print(port)
 # Flask Object
 app = Flask(__name__)
 app.run(debug=True)
@@ -49,4 +52,5 @@ def save_entry():
                 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=port)
+    # app.run(debug=True)
