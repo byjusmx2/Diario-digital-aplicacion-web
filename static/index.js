@@ -65,7 +65,7 @@ $(function () {
                                 alert("Your entry has been saved successfully!!")
                             },
                             complete: function(){
-                                window.location.href = "http://127.0.0.1:5000/";
+                                window.location.href = "https://digital-diary-web-app.herokuapp.com/";
                             },
                             error: function (result) {
                                 alert(result.responseJSON.message)
