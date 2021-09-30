@@ -8,6 +8,7 @@ let predicted_emotion;
 
 $(document).ready(function () {
     $("#display_date").html(display_date)
+    $('#save_button').prop('disabled', true);
 })
 
 $(function () {
@@ -27,6 +28,7 @@ $(function () {
                 $('#prediction').css("display", "");
                 $('#emo_img_url').css("display", "");
                 predicted_emotion = result.data.predicted_emotion
+                $('#save_button').prop('disabled', false);
             },
             error: function (result) {
                 alert(result.responseJSON.message)
