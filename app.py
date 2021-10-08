@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from model_prediction import *
+import csv
 
 app = Flask(__name__)
 
@@ -38,6 +39,7 @@ def save_entry():
     save_text = request.json.get("text")
     emotion = request.json.get("emotion")
     
+    save_text = save_text.replace("\n", " ")
     entry = f'"{date}","{save_text}","{emotion}"\n'         
     with open("./static/assets/data_files/data_entry.csv", "a") as f:
         f.write(entry)
