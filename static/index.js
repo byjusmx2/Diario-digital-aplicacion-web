@@ -48,7 +48,7 @@ $(function () {
             dataType: "json",
             contentType: 'application/json',
             success: function () {
-                alert("Your entry has been saved successfully!")
+                alert("Tu entrada se guardó exitosamente")
                 window.location.reload()
             },
             error: function (result) {
